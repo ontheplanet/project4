@@ -55,31 +55,10 @@
       ga('create', 'UA-XXXX-Y');
       ga('send', 'pageview');
     </script>
-    <script>
-      var cb = function() {
-        var l = document.createElement('link'); l.rel = 'stylesheet';
-        l.href = 'css/style.css';
-        document.getElementsByTagName('head')[0].appendChild(l);
-      };
-      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-          webkitRequestAnimationFrame || msRequestAnimationFrame;
-      if (raf) raf(cb);
-      else window.addEventListener('load', cb);
-    </script>
+    
     <script src="http://www.google-analytics.com/analytics.js" async></script>
-    <script>
-      function logCRP() {
-       var t = window.performance.timing,
-        dcl = t.domContentLoadedEventStart - t.domLoading,
-        complete = t.domComplete - t.domLoading;
-        var stats = document.getElementById("crp-stats");
-       stats.textContent = 'DCL: ' + dcl + 'ms, onload: ' + complete + 'ms';
-      }
-
-      window.addEventListener("load", function(event) {
-     logCRP();
-      });
-    </script>
+    <script src="js/perfmattersmin.js" async></script>
+    
   </head>
 
   <body>
@@ -115,7 +94,7 @@
           </li>
 
           <li>
-            <img style="width: 100px;" src="views/images/pizzeria-small.jpg">
+            <img style="width: 100px;" src="views/images/pizzeria-mini.jpg">
             <a href="views/pizza.html">Cam's Pizzeria</a>
             <p>Who wants a performant pizza?</p>
           </li>
